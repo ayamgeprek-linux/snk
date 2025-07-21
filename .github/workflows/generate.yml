@@ -7,15 +7,16 @@ on:
 
 jobs:
   deploy:
+    name: generate snake animation
     runs-on: ubuntu-latest
     environment:
       name: github-pages
 
     steps:
-      - name: Checkout the repository
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Generate the snake animation
+      - name: Generate Snake SVG
         uses: Platane/snk@v3
         with:
           github_user_name: ayamgeprek-linux
@@ -23,7 +24,7 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      - name: Push the generated files to output branch
+      - name: Push to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: output
