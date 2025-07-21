@@ -9,12 +9,12 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: generate snake SVG with colors
+      - name: generate snake SVG
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ayamgeprek-linux
           outputs: |
-            dist/github-contribution-grid-snake.svg?color_snake=#A020F0&color_dots=#2d2d2d&color_dots_active=#00FF00&background=transparent
+            dist/github-contribution-grid-snake.svg?color_snake=#00FF00&color_dots=#2d2d2d&color_dots_active=#A020F0&background=transparent
 
       - name: push to output branch
         uses: crazy-max/ghaction-github-pages@v4
